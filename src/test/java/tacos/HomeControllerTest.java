@@ -1,4 +1,4 @@
-package istok.mw.javataco;
+package tacos;
 
 import static org.hamcrest.Matchers.containsString;
 import static
