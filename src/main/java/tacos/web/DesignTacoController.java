@@ -32,7 +32,7 @@ public class DesignTacoController {
 
     @ModelAttribute
     public void addIngredientsToModel(Model model) {
-        Iterable<Ingredient> ingredients = ingredientRepo.findAll();
+        List<Ingredient> ingredients = ingredientRepo.findAll();
         Type[] types = Ingredient.Type.values();
         for (Type type : types) {
             model.addAttribute(type.toString().toLowerCase(),
