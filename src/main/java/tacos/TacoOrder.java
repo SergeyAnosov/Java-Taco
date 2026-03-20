@@ -1,5 +1,6 @@
 package tacos;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import java.util.ArrayList;
@@ -9,22 +10,33 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 import org.hibernate.validator.constraints.CreditCardNumber;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Column;
+import org.springframework.data.relational.core.mapping.Table;
 
 @Data
-public class TacoOrder {
+@Table("Taco_Cloud_Order")
+public class TacoOrder implements Serializable {
 
     private static final long serialVersionUID = 1L;
+
+    @Id
     private Long id;
     private Date placedAt;
 
+    @Column("customer_name")
     @NotBlank(message="Delivery name is required")
     private String deliveryName;
+
     @NotBlank(message="Street is required")
     private String deliveryStreet;
+
     @NotBlank(message="City is required")
     private String deliveryCity;
+
     @NotBlank(message="State is required")
     private String deliveryState;
+
     @NotBlank(message="Zip code is required")
     private String deliveryZip;
 
