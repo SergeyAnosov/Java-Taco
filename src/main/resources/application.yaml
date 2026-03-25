@@ -12,3 +12,10 @@ spring:
     local-datacenter: datacenter1
     username: tacocloud
     password: s3cr3tP455w0rd
+  data:
+    mongodb:
+    host: mongodb.tacocloud.com
+    port: 27017
+    username: tacocloud
+    password: s3cr3tp455w0rd
+    database: tacoclouddb
