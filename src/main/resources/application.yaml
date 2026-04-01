@@ -19,3 +19,17 @@ spring:
     username: tacocloud
     password: s3cr3tp455w0rd
     database: tacoclouddb
+
+  security:
+    oauth2:
+      client:
+        registration:
+          facebook:
+            client-id: YOUR_FACEBOOK_CLIENT_ID
+            client-secret: YOUR_FACEBOOK_CLIENT_SECRET
+            scope: email, public_profile
+        provider:
+          facebook:
+            authorization-uri: https://www.facebook.com/v19.0/dialog/oauth
+            token-uri: https://graph.facebook.com/v19.0/oauth/access_token
+            user-info-uri: https://graph.facebook.com/me?fields=id,name,email
