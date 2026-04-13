@@ -3,7 +3,6 @@ spring:
     name: java-taco
   datasource:
     name: tacocloud
-    url: jdbc:mysql://localhost/tacocloud
     username: tacouser
     password: tacopassword
     generate-unique-name: false
@@ -36,19 +35,19 @@ spring:
             authorization-uri: https://www.facebook.com/v19.0/dialog/oauth
             token-uri: https://graph.facebook.com/v19.0/oauth/access_token
             user-info-uri: https://graph.facebook.com/me?fields=id,name,email
-  sql:
-    init:
-      schema-locations:
-        - order-schema.sql
-        - ingredient-schema.sql
-        - taco-schema.sql
-        - user-schema.sql
-      data-locations:
-        - ingredients.sql
+#  sql:
+#    init:
+#      schema-locations:
+#        - order-schema.sql
+#        - ingredient-schema.sql
+#        - taco-schema.sql
+#        - user-schema.sql
+#      data-locations:
+#        - ingredients.sql
 
 server:
   port: 8443
   ssl:
-    key-store: file://mykeys.jks
+    key-store: file:mykeys.jks
     key-store-password: letmein
     key-password: letmein

@@ -4,5 +4,6 @@ import tacos.TacoOrder;
 
 public interface OrderRepository extends CrudRepository<TacoOrder, String> {
 
+    List<Order> findByUserOrderByPlacedAtDesc (User user);
 
 }
